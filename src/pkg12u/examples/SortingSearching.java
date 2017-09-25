@@ -31,6 +31,15 @@ public class SortingSearching {
     }
 
     public void bubble(int[] array) {
+        // keep track of end
+        int last = array.length;
+
+        // boolean to flag a swap
+        boolean swap = true;
+
+        // Continue if a swap has been made
+        while (swap) {
+        }
     }
 
     public void insertion(int[] array) {
