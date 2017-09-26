@@ -39,10 +39,35 @@ public class SortingSearching {
 
         // Continue if a swap has been made
         while (swap) {
+            // Assume swaps will be done
+            swap = false;
+            // look for swaps
+            for (int i = 0; i < last - 1; i++) {
+                // find a bigger value?
+                if (array[i] > array[i + 1]) {
+                    // swap
+                    swap(array, i, i + 1);
+                    swap = true;
+                }
+            }
+            // move the last position tracker
+            last--;
         }
     }
 
     public void insertion(int[] array) {
+        // Start going through the array
+        for (int i = 0; i < array.length - 1; i++) {
+            // Store position
+            int position = i;
+            // Check values beside each other
+            while (position >= 0 && array[position] > array[position + 1]) {
+                // If out of place, swap it downwards until correct position is reached
+                swap(array, position, position + 1);
+                position--;
+            }
+        }
+
     }
 
     /**
@@ -69,7 +94,7 @@ public class SortingSearching {
 
 
         // Test the selection method
-        test.selection(numbers);
+        test.insertion(numbers);
         System.out.println("");
         System.out.println("");
 
