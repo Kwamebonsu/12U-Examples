@@ -4,6 +4,8 @@
  */
 package pkg12u.examples;
 
+import java.util.Arrays;
+
 /**
  *
  * @author bonsk5852
@@ -70,6 +72,47 @@ public class SortingSearching {
 
     }
 
+    public void merge(int[] array) {
+        // If we are 1 item, done sorting
+        if (array.length <= 1) {
+            return;
+        }
+        // divide into 2 arrays
+        int split = array.length / 2;
+        // create 2 arrays
+        int[] front = Arrays.copyOfRange(array, 0, split);
+        int[] back = Arrays.copyOfRange(array, split, array.length);
+
+        // recursively sort
+        merge(front);
+        merge(back);
+
+        // put numbers in the right position
+        // keeping track of where we are
+        int fSpot = 0;
+        int bSpot = 0;
+        for (int i = 0; i < array.length; i++) {
+            // no more items in front
+            if (fSpot == front.length) {
+                // put item from back array in
+                array[i] = back[bSpot];
+                bSpot++;
+            } else if (bSpot == back.length) {
+                // put item from front array in
+                array[i] = front[fSpot];
+                fSpot++;
+            } else if (front[fSpot] < back[bSpot]) {
+                // put front item in
+                array[i] = front[fSpot];
+                fSpot++;
+            } else {
+                // put back item in
+                array[i] = back[bSpot];
+                bSpot++;
+            }
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -94,7 +137,7 @@ public class SortingSearching {
 
 
         // Test the selection method
-        test.insertion(numbers);
+        test.merge(numbers);
         System.out.println("");
         System.out.println("");
 
