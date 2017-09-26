@@ -113,6 +113,17 @@ public class SortingSearching {
         }
     }
 
+    public int sequential(int[] array, int number) {
+
+        for (int i = 0; i < array.length; i++) {
+            if (number == array[i]) {
+                return i;
+            }
+        }
+        // didn't find it
+        return -1;
+    }
+
     /**
      * @param args the command line arguments
      */
