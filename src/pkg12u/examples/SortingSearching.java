@@ -114,7 +114,7 @@ public class SortingSearching {
     }
 
     public int sequential(int[] array, int number) {
-
+        // Start going through the array
         for (int i = 0; i < array.length; i++) {
             if (number == array[i]) {
                 return i;
@@ -122,6 +122,25 @@ public class SortingSearching {
         }
         // didn't find it
         return -1;
+    }
+
+    public int binary(int[] array, int target) {
+        int min = 0;
+        int max = array.length - 1;
+        while (max >= min) {
+            int guess = (min + max) / 2;
+            // find it?
+            if (array[guess] == target) {
+                return guess;
+            } else if (target > array[guess]) {
+                guess = guess + 1;
+            } else if (target < array[guess]) {
+                guess = guess - 1;
+            }
+        }
+        // didn't find it
+        return -1;
+
     }
 
     /**
@@ -132,7 +151,7 @@ public class SortingSearching {
         SortingSearching test = new SortingSearching();
 
         // Create an array of ints
-        int[] numbers = new int[10];
+        int[] numbers = new int[100];
 
         // Fill the array with random numbers
         for (int i = 0; i < numbers.length; i++) {
@@ -159,5 +178,9 @@ public class SortingSearching {
         for (int i = 0; i < numbers.length; i++) {
             System.out.println(numbers[i]);
         }
+
+
+        //   int sort = test.binary(numbers, 36);
+        //    System.out.println(sort);
     }
 }
