@@ -36,14 +36,27 @@ public class Human {
         return gender;
     }
 
+    public void celebrateBirthday() {
+        // Increase human age by 1
+        this.age++;
+        // Wish them a happy birthday
+        System.out.println("Happy Birthday " + this.name + "!");
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         Human bob = new Human("Bob", 20, 'M');
+        System.out.println(bob.getName());
         System.out.println(bob.getAge());
 
-        Human alice = new Human("Alice", 31, 'F');
+        Human alice = new Human("Alice", 51, 'F');
         System.out.println(alice.getName());
+        System.out.println(alice.getAge());
+
+        bob.celebrateBirthday();
+        System.out.println(bob.getAge());
+        System.out.println(alice.getAge());
     }
 }
