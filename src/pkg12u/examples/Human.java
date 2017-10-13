@@ -31,6 +31,7 @@ public class Human {
     public int getAge() {
         return age;
     }
+    // Accessor method (Getter)- Gets a variable
 
     public char getGender() {
         return gender;
@@ -41,6 +42,11 @@ public class Human {
         this.age++;
         // Wish them a happy birthday
         System.out.println("Happy Birthday " + this.name + "!");
+    }
+    // Mutator method (Setter) - changes value
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
