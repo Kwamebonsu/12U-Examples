@@ -33,5 +33,13 @@ public class Deck {
 
     public void shuffle() {
         //Knuth Shuffle algorithm
+        for (int i = 0; i < numCards; i++) {
+            // generate random spot to swap with
+            int spot = (int) (Math.random() * (numCards - i) + i);
+            card temp = cards[i];
+            cards[i] = cards[spot];
+            cards[spot] = temp;
+
+        }
     }
 }
