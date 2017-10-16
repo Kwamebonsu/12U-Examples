@@ -32,17 +32,21 @@ public class card {
         this.rank = rank;
     }
 // Accessor methods
-/**
- * get the suit of the card
- * @return the suit of the card
- */
+
+    /**
+     * get the suit of the card
+     *
+     * @return the suit of the card
+     */
     public int getSuit() {
         return this.suit;
     }
-/**
- * get the rank of the card
- * @return the rank of the card
- */
+
+    /**
+     * get the rank of the card
+     *
+     * @return the rank of the card
+     */
     public int getRank() {
         return this.rank;
     }
@@ -51,7 +55,7 @@ public class card {
      * Determines if this card is bigger than another card
      *
      * @param c the other card
-     * @return true if the card is bigger than the Card c. 
+     * @return true if the card is bigger than the Card c.
      */
     public boolean isBigger(card c) {
         // is this card bigger than card c?
@@ -60,5 +64,39 @@ public class card {
         } else {
             return false;
         }
+    }
+
+    /**
+     * Pretty version of a card
+     *
+     * @return
+     */
+    @Override
+    public String toString() {
+        String output = "";
+        // Add the rank to the String
+        if (this.rank == 1) {
+            output += "Ace";
+        } else if (this.rank <= 10) {
+            output += this.rank;
+        } else if (this.rank == 11) {
+            output += "Jack";
+        } else if (this.rank == 12) {
+            output += "Queen";
+        } else if (this.rank == 13) {
+            output += "King";
+        }
+        output += " of ";
+
+        if (this.suit == CLUBS) {
+            output += "\u2663";
+        } else if (this.suit == DIAMONDS) {
+            output += "\u2662";
+        } else if (this.suit == SPADES) {
+            output += "\u2660";
+        } else if (this.suit == HEARTS) {
+            output += "\u2661";
+        }
+        return output;
     }
 }
