@@ -29,5 +29,10 @@ public class War {
                 p2.takeCard(deck.dealCard());
             }
         }
+
+        // Game time!!!!!
+        // As long as both players have cards
+        while (p1.getNumCards() > 0 && p2.getNumCards() > 0) {
+        }
     }
 }
