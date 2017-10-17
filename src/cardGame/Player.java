@@ -31,6 +31,7 @@ public class Player {
     }
 
     public void takeCard(card c) {
+        this.numCards++;
         this.hand.add(c);
     }
 

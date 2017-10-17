@@ -33,6 +33,33 @@ public class War {
         // Game time!!!!!
         // As long as both players have cards
         while (p1.getNumCards() > 0 && p2.getNumCards() > 0) {
+            // Player 1 plays a card
+            card p1Card = p1.playCard();
+            System.out.println("Player 1  plays: " + p1Card);
+            // Player 2 plays a card
+            card p2Card = p2.playCard();
+            System.out.println("Player 2 plays: " + p2Card);
+            // did a war happen
+            if (p1Card.getRank() == p2Card.getRank()) {
+                // war code
+                System.out.println("WAR");
+                // Check if ACE is played
+            } else if (p1Card.getRank() > p2Card.getRank() || p1Card.getRank() == 1) {
+                // player 1 wins
+                System.out.println("Player 1 wins");
+                // Take both cards
+                p1.takeCard(p1Card);
+                p1.takeCard(p2Card);
+            } else {
+                // player 2 wins
+                // player 1 wins
+                System.out.println("Player 2 wins");
+                // Take both cards
+                p1.takeCard(p1Card);
+                p1.takeCard(p2Card);
+            }
+            // Space to seperate rounds
+            System.out.println("");
         }
     }
 }
