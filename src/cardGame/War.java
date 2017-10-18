@@ -13,29 +13,17 @@ import java.util.ArrayList;
 public class War {
 
     public static int winner(card p1Card, card p2Card) {
-        // did a war happen
+        // did a war happen?
         if (p1Card.getRank() == p2Card.getRank()) {
-            // war code
-
             System.out.println("WAR");
             return 0;
-
-        } // Check if ACE is played
-        else if ((p1Card.getRank() == 1 && p2Card.getRank() != 1 || p1Card.getRank() > p2Card.getRank())) {
-            // player 1 wins
-
-            System.out.println("Player 1 wins");
-            // Take both cards
-            p1.takeCard(p1Card);
-            p1.takeCard(p2Card);
+            // player1 wins
+        } else if (p1Card.getRank() == 1 || (p1Card.isBigger(p2Card) && p2Card.getRank() != 1)) {
+            System.out.println("Player 1 wins this round");
             return 1;
-        } else if (p2Card.getRank() > p1Card.getRank() || (p2Card.getRank() == 1 && p1Card.getRank() != 1)) {
             // player 2 wins
-
-            System.out.println("Player 2 wins");
-            // Take both cards
-            p1.takeCard(p1Card);
-            p1.takeCard(p2Card);
+        } else {
+            System.out.println("Player 2 wins this round");
             return 2;
         }
     }
