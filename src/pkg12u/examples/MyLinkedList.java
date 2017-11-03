@@ -9,15 +9,15 @@ package pkg12u.examples;
  * @author bonsk5852
  */
 public class MyLinkedList {
-    
+
     private IntNode head;
     private int numItems;
-    
+
     public MyLinkedList() {
         head = null;
         numItems = 0;
     }
-    
+
     public void add(int num) {
         // Start at beginning of list
         IntNode node = head;
@@ -38,7 +38,7 @@ public class MyLinkedList {
         }
         numItems++;
     }
-    
+
     public void add(int pos, int num) {
         // at the front
         if (pos == 0) {
@@ -71,15 +71,15 @@ public class MyLinkedList {
             numItems++;
         }
     }
-    
+
     public int size() {
         return numItems;
     }
-    
+
     public boolean isEmpty() {
         return numItems == 0;
     }
-    
+
     public int get(int position) {
         IntNode node = head;
         // move the number of time
@@ -89,7 +89,7 @@ public class MyLinkedList {
         // Return the number at that position
         return node.getNum();
     }
-    
+
     public void remove(int pos) {
         // removing from the start of the list
         if (pos == 0) {
