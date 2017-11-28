@@ -27,6 +27,18 @@ public class Contact {
         this.email = email;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public String getPhone() {
+        return this.phoneNumber;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
     @Override
     public String toString() {
         String format = this.name + "\n";
