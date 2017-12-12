@@ -18,4 +18,15 @@ public class Dog extends Pet {
     public void speak() {
         System.out.println("WOOF WOOF!");
     }
+
+    public void howl() {
+        System.out.println("HOOOOOWWWWWWLLLLLL...");
+    }
+
+    @Override
+    public String toString() {
+        String fromPet = super.toString();
+        fromPet += "\nType: Dog";
+        return fromPet;
+    }
 }
